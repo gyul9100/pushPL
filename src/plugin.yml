@@ -1,0 +1,6 @@
+name: push
+version: 1.0
+main: main.Main
+commands:
+  p:
+    description: "Command for push"
