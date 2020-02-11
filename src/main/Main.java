@@ -35,9 +35,11 @@ public class Main extends JavaPlugin {
                 } else if (args[0].equalsIgnoreCase("info")) {
                     sender.sendMessage(ChatColor.YELLOW + "Push for CmdBlock.Made by Gyul");
                 } else if (isDouble(args[0])) {
-                    Vector unitVector = new Vector(player.getLocation().getDirection().getX(),player.getLocation().getDirection().getY(), player.getLocation().getDirection().getZ());
-                    unitVector = unitVector.normalize();
-                    player.setVelocity(unitVector.multiply(2));
+                    if(args.length == 1) {
+                        Vector unitVector = new Vector(player.getLocation().getDirection().getX(), player.getLocation().getDirection().getY(), player.getLocation().getDirection().getZ());
+                        unitVector = unitVector.normalize();
+                        player.setVelocity(unitVector.multiply(2));
+                    }
                 } else {
                     sender.sendMessage(ChatColor.RED + "Invalid Command.");
                 }
